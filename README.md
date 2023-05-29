@@ -60,7 +60,7 @@ This project aims to provide a solution for object detection in low-light condit
 5. Run the application:
 
    ```
-   python main.py
+   python connector.py
    ```
 
 6. The application will send ADB commands to the Android device to capture images.

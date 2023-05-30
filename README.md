@@ -29,22 +29,52 @@ This project aims to provide a solution for object detection in low-light condit
 
 2. Connect your Android device to your computer via USB.
 
+
+
 3. Enable USB debugging on your Android device.
 
-4. Install the required Python dependencies:
+
+## Connecting Android Device using ADB over Wi-Fi
+
+To connect your Android device to your computer using ADB over Wi-Fi, follow these steps:
+
+1. Connect your Android device to your computer via USB.
+
+2. Enable USB debugging on your Android device.
+
+3. Open a terminal or command prompt on your computer.
+
+4. Run the following command to check if your device is recognized:
+```shell
+adb devices
+```
+You should see your device listed as a connected device.
+
+5. Run the following command to connect your device over Wi-Fi:
+```shell
+adb tcpip 5555
+```
+
+
+6. Disconnect your Android device from the computer.
+
+7. Find the IP address of your Android device. You can usually find it in the Settings under "About phone" or "About device."
+
+8. Run the following command to connect to your device over Wi-Fi:
+
+```shell
+adb connect <android-device-ip-address>:5555
+```
+Replace `<device-ip-address>` with the actual IP address of your device.
+
+9. If the connection is successful, you should see a message indicating that the device is connected.
+
+10. You can now disconnect the USB cable from your Android device.
+
+11. Install the required Python dependencies:
 
    ```
    pip install -r requirements.txt
-   ```
-
-5. Download the YOLOv5 model and weights from the official repository.
-
-6. Copy the YOLOv5 model and weights into the project directory.
-
-7. Run the application:
-
-   ```
-   python connector.py
    ```
 
 ## Usage
